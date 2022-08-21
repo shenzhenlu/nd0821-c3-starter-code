@@ -8,7 +8,6 @@ class ModelInput(BaseModel):
     workclass: Literal[
         'State-gov', 'Self-emp-not-inc', 'Private', 'Federal-gov',
         'Local-gov', 'Self-emp-inc', 'Without-pay']
-    fnlgt: int
     education: Literal[
         'Bachelors', 'HS-grad', '11th', 'Masters', '9th',
         'Some-college',

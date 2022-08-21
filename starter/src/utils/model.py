@@ -78,7 +78,7 @@ def compute_slice_metrics(data_cat, cat_col, y, preds):
     -------
     None.
     """
-    with open('slice_output.txt', 'w') as f:
+    with open('starter//src//slice_output.txt', 'w') as f:
         categories = data_cat[cat_col].unique()
         for category in categories:
             category_index = data_cat[data_cat[cat_col]==category].index

@@ -24,11 +24,10 @@ def test_get_path(client):
 
 
 def test_post_high(client):
-    request = client.post("/prediction", json={'age': 50,
+    request = client.post("/prediction", json={'age': 40,
                                      'workclass': 'Private',
-                                     'fnlgt': 149184,
-                                     'education': 'HS-grad',
-                                     'marital_status': 'Never-married',
+                                     'education': 'Doctorate',
+                                     'marital_status': 'Married-civ-spouse',
                                      'occupation': 'Prof-specialty',
                                      'relationship': 'Not-in-family',
                                      'race': 'White',
@@ -42,7 +41,6 @@ def test_post_high(client):
 def test_post_low(client):
     request = client.post("/prediction", json={'age': 20,
                                      'workclass': 'Private',
-                                     'fnlgt': 149184,
                                      'education': 'HS-grad',
                                      'marital_status': 'Never-married',
                                      'occupation': 'Prof-specialty',
