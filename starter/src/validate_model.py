@@ -7,12 +7,12 @@ from utils.model import inference, compute_model_metrics, compute_slice_metrics
 
 
 # Load preprocess and train models
-encoder = joblib.load("..//model//encoder.pkl")
-lb = joblib.load("..//model//lb.pkl")
-model = joblib.load("..//model//model.pkl")
+encoder = joblib.load("starter//model//encoder.pkl")
+lb = joblib.load("starter//model//lb.pkl")
+model = joblib.load("starter//model//model.pkl")
 
 # Load test data
-test = joblib.load("..//data//test.pkl")
+test = joblib.load("starter//data//test.pkl")
 
 # Proces the test data with the process_data function.
 X_test, y_test, encoder, lb = process_data(test,

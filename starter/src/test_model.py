@@ -13,7 +13,7 @@ from src.utils.model import inference
 
 
 def test_clean_data(request):
-    data = pd.read_csv("..//data//census.csv")
+    data = pd.read_csv("starter//data//census.csv")
     data_clean = clean_data(data)
 
     assert set(data_clean.columns) == {"age", "workclass", "fnlgt", "education", 
@@ -49,7 +49,7 @@ def test_process_data(request):
 
 def test_inference(request):
     X_test = pd.read_json(request.config.cache.get('cache_json_data', None)).to_numpy()
-    model = joblib.load("..//model//model.pkl")
+    model = joblib.load("starter//model//model.pkl")
     predictions = inference(model, X_test)
 
     assert set(np.unique(predictions)).issubset({0, 1})

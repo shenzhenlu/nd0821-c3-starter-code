@@ -11,7 +11,7 @@ from utils.data import clean_data, process_data
 from utils.model import train_model
 
 # Load in data
-data = pd.read_csv("..//data//census.csv")
+data = pd.read_csv("starter//data//census.csv")
 
 # %%
 # Clean data
@@ -26,12 +26,12 @@ X_train, y_train, encoder, lb = process_data(
 )
 
 # %%
-joblib.dump(encoder, "..//model//encoder.pkl")
-joblib.dump(lb, "..//model//lb.pkl")
+joblib.dump(encoder, "starter//model//encoder.pkl")
+joblib.dump(lb, "starter//model//lb.pkl")
 
 # Train and save ML models
 model = train_model(X_train, y_train)
-joblib.dump(model, "..//model//model.pkl")
+joblib.dump(model, "starter//model//model.pkl")
 
 # Save test data
-joblib.dump(test, "..//data//test.pkl")
+joblib.dump(test, "starter//data//test.pkl")
