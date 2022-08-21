@@ -16,7 +16,7 @@ def test_clean_data(request):
     data = pd.read_csv("starter//data//census.csv")
     data_clean = clean_data(data)
 
-    assert set(data_clean.columns) == {"age", "workclass", "fnlgt", "education", 
+    assert set(data_clean.columns) == {"age", "workclass", "education", 
                                         "marital_status", "occupation", "relationship",
                                         "race", "sex", "hours_per_week", "salary"}
     
