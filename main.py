@@ -6,9 +6,9 @@ from fastapi import FastAPI
 import pandas as pd
 
 from config import ModelInput
-from src import constants
-from src.utils.data import process_data
-from src.utils.model import inference
+from starter.src import constants
+from starter.src.utils.data import process_data
+from starter.src.utils.model import inference
 
 if "DYNO" in os.environ and os.path.isdir(".dvc"):
     os.system("dvc config core.no_scm true")
