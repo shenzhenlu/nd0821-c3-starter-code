@@ -5,6 +5,7 @@ import constants
 from utils.data import process_data
 from utils.model import inference, compute_model_metrics, compute_slice_metrics
 
+
 # Load preprocess and train models
 encoder = joblib.load("..//model//encoder.pkl")
 lb = joblib.load("..//model//lb.pkl")
