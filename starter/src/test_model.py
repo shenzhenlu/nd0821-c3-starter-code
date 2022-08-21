@@ -2,14 +2,14 @@
 import joblib
 import sys
 sys.path.append('..')
-import pytest
+
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-from src import constants
-from src.utils.data import clean_data, process_data
-from src.utils.model import inference
+from starter.src import constants
+from starter.src.utils.data import clean_data, process_data
+from starter.src.utils.model import inference
 
 
 def test_clean_data(request):
