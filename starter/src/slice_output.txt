@@ -1,2 +1,2 @@
-Category:  Male, Precision: 0.3518181818181818, Recall, 0.7759398496240602, F-Score: 0.48412822517591864
-Category:  Female, Precision: 0.138334145153434, Recall, 0.7613941018766756, F-Score: 0.2341302555647156
+Category:  Male, Precision: 1.0, Recall, 0.0, F-Score: 0.0
+Category:  Female, Precision: 1.0, Recall, 0.0, F-Score: 0.0
