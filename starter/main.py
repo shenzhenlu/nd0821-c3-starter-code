@@ -1,4 +1,4 @@
-# Put the code for your API here.
+#%% Put the code for your API here.
 import os
 import joblib
 
@@ -28,8 +28,8 @@ async def predict(model_input: ModelInput):
     df_input = pd.DataFrame(model_input.dict(), index=[0])
 
     # preprocessing
-    encoder = joblib.load("model//encoder.pkl")
-    lb = joblib.load("model//lb.pkl")
+    encoder = joblib.load("starter//model//encoder.pkl")
+    lb = joblib.load("starter//model//lb.pkl")
 
     X_input, _, _, _ = process_data(df_input,
                                     categorical_features=constants.cat_features,
@@ -38,7 +38,7 @@ async def predict(model_input: ModelInput):
                                     lb=lb
                                     )
     # inferencing
-    model = joblib.load("model//model.pkl")
+    model = joblib.load("starter//model//model.pkl")
 
     prediction = inference(model, X_input)
 
@@ -46,3 +46,5 @@ async def predict(model_input: ModelInput):
     label_prediction = lb.inverse_transform(prediction)[0]
 
     return {"prediction": label_prediction}
+
+# %%
