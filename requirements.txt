@@ -2,5 +2,6 @@ pytest==7.1.1
 numpy==1.21.5
 pandas==1.4.2
 scikit-learn==1.0.2
+requests==2.27.1
 fastapi==0.79.1
 flake8==3.9.2
