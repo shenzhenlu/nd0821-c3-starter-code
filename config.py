@@ -1,7 +1,7 @@
-# %%
 import pandas as pd
 from pydantic import BaseModel
 from typing import Literal
+
 
 class ModelInput(BaseModel):
     age: int
@@ -31,15 +31,13 @@ class ModelInput(BaseModel):
         'Other']
     sex: Literal['Male', 'Female']
     hours_per_week: int
-    
 
-# %%
+
 if __name__ == "__main__":
-    model_input = ModelInput(age=10, workclass='State-gov', fnlgt=10, education='9th', 
-                        marital_status='Divorced', occupation='Armed-Forces', 
-                        relationship='Husband', race='White', sex='Male', hoursPerWeek=37)
+    model_input = ModelInput(age=10, workclass='State-gov', fnlgt=10, education='9th',
+                             marital_status='Divorced', occupation='Armed-Forces',
+                             relationship='Husband', race='White', sex='Male', hoursPerWeek=37)
 
     input_dict = model_input.dict()
 
-    df_input = pd.DataFrame(input_dict,index=[0])
-# %%
+    df_input = pd.DataFrame(input_dict, index=[0])

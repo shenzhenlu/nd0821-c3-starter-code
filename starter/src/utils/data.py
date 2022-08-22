@@ -1,11 +1,14 @@
 import numpy as np
 from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
 
+
 def clean_data(df):
     df.columns = df.columns.str.strip()
     df.columns = df.columns.str.replace("-", "_")
-    df = df.drop(columns=["native_country", 'education_num', 'capital_gain', 'capital_loss', 'fnlgt'])
+    df = df.drop(columns=["native_country", 'education_num',
+                 'capital_gain', 'capital_loss', 'fnlgt'])
     return df
+
 
 def process_data(
     X, categorical_features=[], label=None, training=True, encoder=None, lb=None

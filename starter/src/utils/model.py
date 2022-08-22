@@ -1,7 +1,7 @@
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 
-# Optional: implement hyperparameter tuning.
+
 def train_model(X_train, y_train):
     """
     Trains a machine learning model and returns it.
@@ -18,9 +18,11 @@ def train_model(X_train, y_train):
         Trained machine learning model.
     """
 
-    model = LogisticRegression(random_state=0, class_weight='balanced').fit(X_train, y_train)
+    model = LogisticRegression(
+        random_state=0, class_weight='balanced').fit(X_train, y_train)
 
     return model
+
 
 def compute_model_metrics(y, preds):
     """
@@ -49,7 +51,7 @@ def inference(model, X):
 
     Inputs
     ------
-    model : 
+    model :
         Trained machine learning model.
     X : np.array
         Data used for prediction.
@@ -61,8 +63,10 @@ def inference(model, X):
     preds = model.predict(X)
     return preds
 
+
 def compute_slice_metrics(data_cat, cat_col, y, preds):
-    """ Compute precision, recall, and F1 on model slices and store them in text file.
+    """ Compute precision, recall, and F1 on model slices and store them
+    in text file.
 
     Inputs
     ------
@@ -81,7 +85,9 @@ def compute_slice_metrics(data_cat, cat_col, y, preds):
     with open('starter//src//slice_output.txt', 'w') as f:
         categories = data_cat[cat_col].unique()
         for category in categories:
-            category_index = data_cat[data_cat[cat_col]==category].index
-            category_precision, category_recall, category_fbeta = compute_model_metrics(y[category_index], preds[category_index])
-            
-            f.write(f"Category: {category}, Precision: {category_precision}, Recall, {category_recall}, F-Score: {category_fbeta}\n")
+            category_index = data_cat[data_cat[cat_col] == category].index
+            category_precision, category_recall, category_fbeta = compute_model_metrics(
+                y[category_index], preds[category_index])
+
+            f.write(
+                f"Category: {category}, Precision: {category_precision}, Recall, {category_recall}, F-Score: {category_fbeta}\n")

@@ -1,4 +1,4 @@
-#%% Put the code for your API here.
+# Put the code for your API here.
 import os
 import joblib
 
@@ -18,9 +18,11 @@ if "DYNO" in os.environ and os.path.isdir(".dvc"):
 
 app = FastAPI()
 
+
 @app.get("/")
 async def root():
     return {"Greeting Message": "Thanks for using my App!"}
+
 
 @app.post("/prediction")
 async def predict(model_input: ModelInput):
