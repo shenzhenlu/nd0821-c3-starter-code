@@ -23,7 +23,6 @@ X_test, y_test, encoder, lb = process_data(test,
                                            lb=lb
                                            )
 
-# %%
 # Model metrics overall
 preds = inference(model, X_test)
 precision, recall, fbeta = compute_model_metrics(y_test, preds)
@@ -34,4 +33,3 @@ data_cat_test = test[constants.cat_features].reset_index(drop=True)
 
 # model metrics on data slices
 compute_slice_metrics(data_cat_test, "sex", y_test, preds)
-# %%
