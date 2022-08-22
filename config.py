@@ -32,12 +32,17 @@ class ModelInput(BaseModel):
     sex: Literal['Male', 'Female']
     hours_per_week: int
 
-
-if __name__ == "__main__":
-    model_input = ModelInput(age=10, workclass='State-gov', fnlgt=10, education='9th',
-                             marital_status='Divorced', occupation='Armed-Forces',
-                             relationship='Husband', race='White', sex='Male', hoursPerWeek=37)
-
-    input_dict = model_input.dict()
-
-    df_input = pd.DataFrame(input_dict, index=[0])
+    class Config:
+        schema_extra = {
+            "example": {
+                "name": 35,
+                "workclass": "Private",
+                "education": "Masters",
+                "marital_status": "Never-married",
+                "occupation": "Tech-support",
+                "relationship": "Unmarried",
+                "race": "White",
+                "sex": "Male",
+                "hours_per_week": 37
+            }
+        }

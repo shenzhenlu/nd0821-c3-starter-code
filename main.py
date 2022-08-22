@@ -48,5 +48,3 @@ async def predict(model_input: ModelInput):
     label_prediction = lb.inverse_transform(prediction)[0]
 
     return {"prediction": label_prediction}
-
-# %%
